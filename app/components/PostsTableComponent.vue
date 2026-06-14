@@ -29,7 +29,7 @@ import { ref, onMounted } from 'vue'
 const posts = ref([])
 
 onMounted(() => {
-    fetch('http://localhost/api/blog/posts')
+    fetch('/api/admin/blog/posts')
         .then(res => res.json())
         .then(data => {
             posts.value = data.data || data

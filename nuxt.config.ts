@@ -15,6 +15,26 @@ export default defineNuxtConfig({
     '/': { prerender: true }
   },
 
+  vite: {
+    server: {
+      proxy: {
+        '/api': {
+          target: 'http://localhost',
+          changeOrigin: true
+        }
+      }
+    }
+  },
+
+  nitro: {
+    devProxy: {
+      '/api': {
+        target: 'http://localhost',
+        changeOrigin: true
+      }
+    }
+  },
+
   compatibilityDate: '2025-01-15',
 
   eslint: {
